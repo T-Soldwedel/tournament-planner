@@ -1,0 +1,74 @@
+.match-card {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  margin: 1rem 0;
+}
+
+.match-header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  color: #888;
+  border-bottom: 1px solid var(--panel-border);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-row {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  height: 40px;
+}
+
+.team-row.winner {
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.15), transparent);
+  font-weight: 600;
+  color: white;
+  border-left: 3px solid var(--accent-blue);
+}
+
+.team-row.bye {
+  color: #555;
+  font-style: italic;
+}
+
+.seed {
+  color: #888;
+  font-size: 0.75rem;
+  width: 20px;
+  text-align: left;
+}
+
+.team-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.score {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1rem;
+  margin-left: 10px;
+  color: var(--accent-blue);
+}
+
+.team-divider {
+  height: 1px;
+  background: var(--panel-border);
+  width: 100%;
+}

@@ -1,0 +1,72 @@
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent-blue: #00f0ff;
+  --accent-magenta: #ff003c;
+  --panel-bg: rgba(255, 255, 255, 0.05);
+  --panel-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Panel Utility */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Gradient text accent */
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes pulseBorder {
+  0% { border-color: rgba(0, 240, 255, 0.3); box-shadow: 0 0 0 rgba(0, 240, 255, 0); }
+  50% { border-color: rgba(0, 240, 255, 0.8); box-shadow: 0 0 15px rgba(0, 240, 255, 0.4); }
+  100% { border-color: rgba(0, 240, 255, 0.3); box-shadow: 0 0 0 rgba(0, 240, 255, 0); }
+}
+
+.interactive-card {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.interactive-card:hover {
+  transform: translateY(-2px);
+  animation: pulseBorder 2s infinite;
+}
